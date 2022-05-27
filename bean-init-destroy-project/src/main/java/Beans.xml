@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd" default-init-method="init" default-destroy-method="destroy">
+
+	<bean id="student" class="com.example.entity.Student">
+		<property name="message" value="Hello World!" />
+	</bean>
+	<bean class="com.example.BeanPostProcessorMethod" />
+
+	<bean id="textEditor" class="com.example.entity.TextEditor">
+		<property name="spellChecker">
+			<bean id="spellChecker" class="com.example.entity.SpellChecker" />
+		</property>
+	</bean>
+
+	<!--  it is external bean concept from line 17 to 27-->
+	<bean id="employee" class="com.example.entity.Employee">
+		<property name="id" value="5"></property>
+		<property name="name" value="Ravi Panchal"></property>
+		<property name="gender" value="Male"></property>
+
+		<property name="panCard" ref="pancard"></property>
+	</bean>
+	<bean id="pancard" class="com.example.entity.PanCard" >
+		<property name="holderName" value="Ravi Panchal"></property>
+		<property name="panNum" value="BMFPJ2473"></property>
+	</bean>
+
+
+<!-- inner bean concept is used in this -->
+	<bean id="employee1" class="com.example.entity.Employee">
+		<property name="id" value="5"></property>
+		<property name="name" value="Ravi Panchal"></property>
+		<property name="gender" value="Male"></property>
+		<property name="panCard">
+		<bean class="com.example.entity.PanCard">
+			<property name="holderName" value="Ravi Panchal"></property>
+			<property name="panNum" value="BMFPJ2473"></property>
+		</bean>
+		</property>
+	</bean>
+</beans>

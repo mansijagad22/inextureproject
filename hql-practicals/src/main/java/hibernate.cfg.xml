@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://127.0.0.1:3306/empdb</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">Mansi@321</property>
+		<property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+		<property name="current_session_context_class">thread</property>
+		<property name="hbm2ddl.auto">update</property>
+		<property name="show_sql">true</property>
+		<property name="formate_sql">true</property>
+				<!--<property name="cache_use_second_level_cache">true</property>
+		<property name="cache.region.factory_class">org.hibernate.cache.ehcache.internal.EhcacheRegionFactory</property>-->
+		<mapping class="mysql_hibernate_project_entity.Student"/>
+		<mapping class="mysql_hibernate_project_entity.Certificate"/>
+		<mapping class="mysql_hibernate_project_entity.Question"/>
+		<mapping class="mysql_hibernate_project_entity.Answer"/>
+		
+	</session-factory>
+
+</hibernate-configuration>

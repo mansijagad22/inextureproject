@@ -1,0 +1,7 @@
+<!ELEMENT beans (bean)>
+<!ELEMENT bean (property)>
+<!ATTLIST bean id NMTOKEN #REQUIRED>
+<!ATTLIST bean class NMTOKEN #REQUIRED>
+<!ELEMENT property EMPTY>
+<!ATTLIST property name NMTOKEN #REQUIRED>
+<!ATTLIST property value NMTOKEN #REQUIRED>

@@ -1,0 +1,6 @@
+config/ApplicationContextConfig.class
+form/PersonForm.class
+model/Person.class
+config/WebMvcConfig.class
+config/SpringWebAppInitializer.class
+controller/MainController.class
